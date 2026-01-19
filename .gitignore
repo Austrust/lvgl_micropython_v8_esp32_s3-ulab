@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build directories
+build/
+lib/micropython/
+lib/lvgl/
+lib/lv_bindings/
+lib/pycparser/
+lib/ulab/
+
+# MicroPython generated files
+*.mpy
+frozen_mpy.c
+genhdr/
+
+# ESP-IDF files
+sdkconfig
+sdkconfig.old
+*.bin
+*.elf
+*.map
+
+# Toolchain files
+.ccache/
+*.o
+*.a
+*.d
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python virtual environment
+venv/
+env/
+.env
+
+# Distribution / packaging
+*.egg-info/
+dist/
+downloads/
+eggs/
+.eggs/
+wheels/
+
+# Cache
+*.cache
+.pytest_cache/
