@@ -112,12 +112,15 @@ def create_ui():
     processor = DataProcessor()
     
     # Timer callback to update chart
+    update_count = [0]  # Counter for stats updates
+    
     def update_callback(timer):
         # Update chart
         wave_chart.update()
         
         # Update statistics (every 10th update)
-        if timer.get_repeat_count() % 10 == 0:
+        update_count[0] += 1
+        if update_count[0] % 10 == 0:
             stats = processor.calculate_statistics()
             stats_text = f"Mean: {stats['mean']:.2f} | Std: {stats['std']:.2f}"
             stats_label.set_text(stats_text)

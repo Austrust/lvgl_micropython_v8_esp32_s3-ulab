@@ -97,9 +97,8 @@ def demo_matrix_operations():
     # Transpose
     print(f"Transpose of A:\n{A.T}")
     
-    # Determinant (if available)
+    # Determinant (if available in ulab)
     try:
-        from ulab import numpy as np
         det_A = np.linalg.det(A)
         print(f"Determinant of A: {det_A}")
     except (ImportError, AttributeError):
@@ -134,12 +133,12 @@ def demo_sensor_data_processing():
     print("\n=== Sensor Data Processing Example ===")
     
     # Simulate noisy sensor readings (e.g., temperature)
-    np.random.seed(42)
+    # Note: ulab's numpy doesn't have random module, so we use a pattern
     num_samples = 20
     true_temp = 25.0  # °C
     noise_level = 0.5
     
-    # Generate synthetic sensor data
+    # Generate synthetic sensor data with simulated noise pattern
     sensor_data = np.array([true_temp + (i % 3 - 1) * noise_level 
                            for i in range(num_samples)])
     
